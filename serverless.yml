@@ -1,0 +1,20 @@
+service: payonline
+
+provider:
+  name: aws
+  runtime: python2.7
+
+functions:
+  userregisterpse:
+    handler: userregisterpse.handler
+    events:
+      - http:
+          path: payonline/userregisterpse/{id}
+          method: get
+ 
+  externalservice:
+    handler: externalservice.handler
+    events:
+      - http:
+          path: payonline/externalservice/{id}
+          method: get
